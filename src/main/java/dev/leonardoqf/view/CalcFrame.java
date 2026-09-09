@@ -10,9 +10,13 @@ import javax.swing.JPanel;
 public class CalcFrame extends JFrame {
 
     private JPanel buttonsPanel;
+    private InputField inputField;
+    private HistoryOutputPanel output;
 
     public CalcFrame() {
         buttonsPanel = new ButtonsPanel();
+        inputField = new InputField();
+        output = new HistoryOutputPanel();
         //Instantiate the panel before init
 
 
@@ -20,7 +24,7 @@ public class CalcFrame extends JFrame {
     }
 
     private void init() {
-        this.setLayout(new BorderLayout(25, 25));
+        this.setLayout(new BorderLayout());
         this.setTitle("SimpleJCalc");
         this.setSize(500, 600);
         this.getContentPane().setBackground(Color.GRAY);
@@ -29,6 +33,8 @@ public class CalcFrame extends JFrame {
 
 
         this.add(buttonsPanel, BorderLayout.SOUTH);
+        this.add(inputField, BorderLayout.CENTER);
+        this.add(output, BorderLayout.NORTH);
 
         this.setVisible(true);
     }

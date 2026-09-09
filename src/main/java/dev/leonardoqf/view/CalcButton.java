@@ -4,15 +4,8 @@ import javax.swing.JButton;
 
 public class CalcButton extends JButton {
 
-    private final String key;
 
-    public CalcButton(String key) {
-        this.key = key;
-        this.setText(key);
+    public CalcButton(String text) {
+        this.setText(text);
     }
-
-    public String getKey() {
-        return key;
-    }
-
 }
