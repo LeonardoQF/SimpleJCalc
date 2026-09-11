@@ -1,6 +1,5 @@
 package dev.leonardoqf;
 
-import javax.swing.LookAndFeel;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 

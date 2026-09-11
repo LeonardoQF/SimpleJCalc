@@ -32,6 +32,7 @@ public class ButtonsPanel extends JPanel {
             {new CalcButton("0"), new CalcButton("."), new CalcButton("="), new CalcButton(null)}
         };
 
+        //For loop to add the buttons to the Panel as components
         for(int i = 0; i < 5; i++) {
             for(int j = 0; j < 4; j++) {
                 this.add(buttons[i][j]);

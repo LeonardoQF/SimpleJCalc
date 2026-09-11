@@ -6,7 +6,6 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.Timer;
 
 public class HistoryOutputPanel extends JPanel {
 

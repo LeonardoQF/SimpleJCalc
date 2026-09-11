@@ -14,4 +14,5 @@ public class InputField extends JFormattedTextField {
         this.setFont(new Font("Ubuntu", Font.PLAIN, 40));
     }
 
+
 }
