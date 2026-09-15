@@ -19,10 +19,11 @@ public class CalcModel implements ExpressionCalculator {
     //TODO should also verify whether an expression is legal
     @Override
     public boolean isValidExpression(String exp) {
+        if(exp == null) throw new NullPointerException("Exp can't be null");
 
         List<Character> expChars = exp.chars().mapToObj(c -> (char) c).toList();
 
-        return expChars.stream().allMatch(c -> VALID_CHARACTERS.indexOf(c) >= 0);
+        return expChars.stream().allMatch(c -> VALID_CHARACTERS.indexOf(c) >= 0) && !exp.trim().isBlank();
     }
 
     @Override
