@@ -6,6 +6,10 @@ import java.awt.GridLayout;
 
 import javax.swing.JPanel;
 
+import dev.leonardoqf.view.buttons.CalcButton;
+import dev.leonardoqf.view.buttons.FunctionButton;
+import dev.leonardoqf.view.buttons.NumberButton;
+
 public class ButtonsPanel extends JPanel {
 
     private CalcButton[][] buttons;
@@ -25,11 +29,11 @@ public class ButtonsPanel extends JPanel {
     public void initButtons() {
 
         buttons = new CalcButton[][] {
-            {new CalcButton("<"), new CalcButton("C"), new CalcButton("sqrt"), new CalcButton("÷")},
-            {new CalcButton("7"), new CalcButton("8"), new CalcButton("9"), new CalcButton("x")},
-            {new CalcButton("4"), new CalcButton("5"), new CalcButton("6"), new CalcButton("-")},
-            {new CalcButton("1"), new CalcButton("2"), new CalcButton("3"), new CalcButton("+")},
-            {new CalcButton("0"), new CalcButton("."), new CalcButton("="), new CalcButton(null)}
+            {new FunctionButton("<"), new FunctionButton("C"), new FunctionButton("sqrt"), new FunctionButton("÷")},
+            {new NumberButton("7"), new NumberButton("8"), new NumberButton("9"), new FunctionButton("x")},
+            {new NumberButton("4"), new NumberButton("5"), new NumberButton("6"), new FunctionButton("-")},
+            {new NumberButton("1"), new NumberButton("2"), new NumberButton("3"), new FunctionButton("+")},
+            {new NumberButton("0"), new NumberButton("."), new FunctionButton("="), new NumberButton(null)}
         };
 
         //For loop to add the buttons to the Panel as components
