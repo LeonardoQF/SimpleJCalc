@@ -2,52 +2,26 @@ package dev.leonardoqf.model;
 
 import java.util.List;
 
-public class CalcModel implements ExpressionCalculator {
+import dev.leonardoqf.model.factories.MathStrategyFactory;
+
+public class CalcModel {
 
     private final String VALID_CHARACTERS = "1234567890 ";
+    private final MathStrategyFactory strategyFactory;
 
-    public CalcModel() {
-
+    public CalcModel(MathStrategyFactory strategyFactory) {
+        this.strategyFactory = strategyFactory;
     }
 
-    @Override
-    public boolean calculate(String exp) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'calculate'");
+    public double calculate(double num1, double num2, char operator) {
+        return strategyFactory.getStrategy(operator).calculate(num1, num2);
     }
 
-    //TODO should also verify whether an expression is legal
-    @Override
-    public boolean isValidExpression(String exp) {
-        if(exp == null) throw new NullPointerException("Exp can't be null");
+    public boolean isValidExpression(String term) {
+        if(term == null) throw new NullPointerException("Exp can't be null");
 
-        List<Character> expChars = exp.chars().mapToObj(c -> (char) c).toList();
+        List<Character> expChars = term.chars().mapToObj(c -> (char) c).toList();
 
-        return expChars.stream().allMatch(c -> VALID_CHARACTERS.indexOf(c) >= 0) && !exp.trim().isBlank();
+        return expChars.stream().allMatch(c -> VALID_CHARACTERS.indexOf(c) >= 0) && !term.trim().isBlank();
     }
-
-    @Override
-    public double sum(double num1, double num2) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'sum'");
-    }
-
-    @Override
-    public double subtract(double num1, double num2) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'subtract'");
-    }
-
-    @Override
-    public double multiply(double num1, double num2) {
-        // TODO
-        throw new UnsupportedOperationException("Unimplemented method 'multiply'");
-    }
-
-    @Override
-    public double divide(double num1, double num2) {
-        // TODO 
-        throw new UnsupportedOperationException("Unimplemented method 'divide'");
-    }
-
 }

@@ -1,5 +1,7 @@
 package dev.leonardoqf.view.buttons;
 
+import java.awt.event.ActionListener;
+
 import javax.swing.JButton;
 
 public abstract class CalcButton extends JButton {
@@ -9,5 +11,9 @@ public abstract class CalcButton extends JButton {
     }
 
     public abstract void act();
+
+    public void addControllerListener(ActionListener listener) {
+        this.addActionListener(listener);
+    }
 
 }
