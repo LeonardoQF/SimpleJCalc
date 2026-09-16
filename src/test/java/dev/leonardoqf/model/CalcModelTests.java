@@ -7,9 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.Test;
 
+import dev.leonardoqf.model.factories.MathStrategyFactory;
+
 public class CalcModelTests {
 
-    CalcModel calc = new CalcModel();
+    CalcModel calc = new CalcModel(new MathStrategyFactory());
 
     @Test 
     public void shouldBeValid() {
@@ -23,6 +25,7 @@ public class CalcModelTests {
         assertFalse(calc.isValidExpression("4a"));
         assertFalse(calc.isValidExpression("SushiIsNice"));
         assertFalse(calc.isValidExpression(""));
+        assertFalse(calc.isValidExpression("4÷2"));
         assertFalse(calc.isValidExpression("    "));
         assertFalse(calc.isValidExpression("4x4xBxx0xNxPI"));
     }
@@ -34,6 +37,17 @@ public class CalcModelTests {
         });
 
         assertEquals("Exp can't be null", exception.getMessage());
+    }
+
+    @Test 
+    public void testArithmeticOperations() {
+        double num1 = 10;
+        double num2 = 5;
+        
+        assertEquals(15.0, calc.calculate(num1, num2, '+'));
+        assertEquals(5, calc.calculate(num1, num2, '-'));
+        assertEquals(50, calc.calculate(num1, num2, 'x'));
+        assertEquals(2, calc.calculate(num1, num2, '÷'));
     }
     
 }
