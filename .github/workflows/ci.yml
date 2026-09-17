@@ -14,7 +14,14 @@ jobs:
 
         steps:
             - name: Checkout the code
-              uses: actions/checkout@V7
+              uses: actions/checkout@V6
             
-            - name: Set Java up
+            - name: Setup Java
               uses: actions/setup-java@v6
+              with:
+                java-version: '21'
+                distribution: 'temurin'
+
+            - name: Run tests
+              run: ./mvn test
+
