@@ -24,3 +24,12 @@ jobs:
 
             - name: Run tests
               run: ./mvnw test
+            
+            - name: Build package
+              run: ./mvnw package
+
+            - name: Upload JAR
+              uses: actions/upload-artifact@v4
+              with: 
+                name: calculator
+                path: target/*jar
