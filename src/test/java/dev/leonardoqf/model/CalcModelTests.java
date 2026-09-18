@@ -45,7 +45,7 @@ public class CalcModelTests {
         double num2 = 5;
         
         assertEquals(15.0, calc.calculate(num1, num2, '+'));
-        assertEquals(40, calc.calculate(num1, num2, '-'));
+        assertEquals(5, calc.calculate(num1, num2, '-'));
         assertEquals(50, calc.calculate(num1, num2, 'x'));
         assertEquals(2, calc.calculate(num1, num2, '÷'));
     }
