@@ -10,8 +10,6 @@ public abstract class CalcButton extends JButton {
         super(text);
     }
 
-    public abstract void act();
-
     public void addControllerListener(ActionListener listener) {
         this.addActionListener(listener);
     }
