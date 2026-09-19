@@ -41,8 +41,8 @@ public class CalcModelTests {
 
     @Test 
     public void testArithmeticOperations() {
-        calc.setNum1(5);
-        calc.setNum2(10);
+        calc.setNum1(10);
+        calc.setNum2(5);
         
         assertEquals(15.0, calc.calculate('+'));
         assertEquals(5, calc.calculate('-'));
