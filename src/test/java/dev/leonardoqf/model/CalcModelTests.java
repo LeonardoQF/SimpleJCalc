@@ -41,13 +41,13 @@ public class CalcModelTests {
 
     @Test 
     public void testArithmeticOperations() {
-        double num1 = 10;
-        double num2 = 5;
+        calc.setNum1(5);
+        calc.setNum2(10);
         
-        assertEquals(15.0, calc.calculate(num1, num2, '+'));
-        assertEquals(5, calc.calculate(num1, num2, '-'));
-        assertEquals(50, calc.calculate(num1, num2, 'x'));
-        assertEquals(2, calc.calculate(num1, num2, '÷'));
+        assertEquals(15.0, calc.calculate('+'));
+        assertEquals(5, calc.calculate('-'));
+        assertEquals(50, calc.calculate('x'));
+        assertEquals(2, calc.calculate('÷'));
     }
     
 }
