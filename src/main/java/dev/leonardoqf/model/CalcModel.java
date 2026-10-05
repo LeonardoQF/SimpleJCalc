@@ -11,6 +11,7 @@ public class CalcModel {
 
     private double num1;
     private double num2;
+    private double result;
 
     public CalcModel(MathStrategyFactory strategyFactory) {
         this.strategyFactory = strategyFactory;
@@ -27,6 +28,7 @@ public class CalcModel {
     public void clear() {
         num1 = 0;
         num2 = 0;
+        result = 0;
     }
 
     public void sqrt() {
@@ -60,4 +62,14 @@ public class CalcModel {
     public void setNum2(double num2) {
         this.num2 = num2;
     }
+
+    public double getResult() {
+        return result;
+    }
+
+    public void setResult(double result) {
+        this.result = result;
+    }
+
+    
 }
