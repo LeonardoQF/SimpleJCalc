@@ -3,6 +3,9 @@ package dev.leonardoqf;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+import dev.leonardoqf.controller.CalcController;
+import dev.leonardoqf.model.CalcModel;
+import dev.leonardoqf.model.factories.MathStrategyFactory;
 import dev.leonardoqf.view.*;
 
 /*Instead of allowing the user to write a whole expression and then painstakingly parsing it,
@@ -15,7 +18,13 @@ public class App {
     public static void main(String[] args) {
         try {
         UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-        CalcFrame introFrame = new CalcFrame();
+        
+        CalcModel model = new CalcModel(new MathStrategyFactory());
+
+        CalcFrame view = new CalcFrame();
+
+        CalcController controller = new CalcController(model, view);
+
         } catch(ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException e) {
             System.out.println("Error while getting system LAF");
         }
