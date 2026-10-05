@@ -4,19 +4,18 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 
 public class CalcFrame extends JFrame {
 
-    private JPanel buttonsPanel;
+    private ButtonsPanel buttonsPanel;
     private InputField inputField;
-    private HistoryOutputPanel output;
+    private HistoryOutputPanel outputPanel;
 
     public CalcFrame() {
         buttonsPanel = new ButtonsPanel();
         inputField = new InputField();
-        output = new HistoryOutputPanel();
+        outputPanel = new HistoryOutputPanel();
         //Instantiate the panel before init
 
 
@@ -34,9 +33,21 @@ public class CalcFrame extends JFrame {
 
         this.add(buttonsPanel, BorderLayout.SOUTH);
         this.add(inputField, BorderLayout.CENTER);
-        this.add(output, BorderLayout.NORTH);
+        this.add(outputPanel, BorderLayout.NORTH);
 
         this.setVisible(true);
+    }
+
+    public ButtonsPanel getButtonsPanel() {
+        return this.buttonsPanel;
+    }
+
+    public InputField getInputField() {
+        return this.inputField;
+    }
+
+    public HistoryOutputPanel getOutputPanel() {
+        return this.outputPanel;
     }
 
 }
